@@ -33,8 +33,7 @@ Dialog::Dialog(QWidget *parent)
             tap-ms = <U_ANTMORPH_MACRO_TAP>;
             // %3%4
             bindings = <%5>;
-        )
-)TMPL");
+        ))TMPL");
 
     ui->templateText->setPlainText(m_template);
 
@@ -186,7 +185,7 @@ void Dialog::generateMacro()
     ui->macroText->setPlainText(
         tmpl.arg(
             schemaPrefix(),                // 1
-            ident,                         // 2
+            ident.toLower(),               // 2
             prefix,                        // 3
             phrase.toLower(),              // 4
             firstOp + bindings.trimmed()   // 5
